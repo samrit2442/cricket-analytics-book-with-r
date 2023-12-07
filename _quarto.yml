@@ -1,0 +1,26 @@
+project:
+  type: book
+
+book:
+  favicon: "asset 6.png"
+  title: "Cricket Analytics with R"
+  author: "Samrit Pramanik"
+  date: "11/27/2023"
+  chapters:
+    - index.qmd
+    - warm_up.qmd
+    - powerplay.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+  epub:
+    cover-image: cover.png
+editor: visual
+

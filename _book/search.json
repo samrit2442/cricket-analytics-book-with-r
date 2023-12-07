@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Cricket Analytics with R",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book on Cricket Analytics with application in R.\nLike all other Indian boys, in my childhood, cricket was more than just a game, it is a profound emotion, a way of life, and an unrestrained source of happiness."
+  },
+  {
+    "objectID": "warm_up.html",
+    "href": "warm_up.html",
+    "title": "1  Warming Up",
+    "section": "",
+    "text": "To know the game of cricket, you need to know the history, when and how it was started."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "3  The Cricket Data",
+    "section": "",
+    "text": "Cricket data is not so clean at when it was extracted from the database. Most of them are ball by ball on different formats such as T20I, ODI, Test, IPL, CPL etc."
+  }
+]

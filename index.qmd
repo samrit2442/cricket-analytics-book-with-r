@@ -1,0 +1,5 @@
+# Preface {.unnumbered}
+
+This is a Quarto book on Cricket Analytics with application in R.
+
+Like all other Indian boys, in my childhood, cricket was more than just a game, it is a profound emotion, a way of life, and an unrestrained source of happiness.

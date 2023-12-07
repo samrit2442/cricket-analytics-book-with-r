@@ -1,0 +1,3 @@
+# The Cricket Data
+
+Cricket data is not so clean at when it was extracted from the database. Most of them are ball by ball on different formats such as T20I, ODI, Test, IPL, CPL etc.
