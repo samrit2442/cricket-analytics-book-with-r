@@ -10,6 +10,9 @@ book:
     - index.qmd
     - warm_up.qmd
     - powerplay.qmd
+    # - middle_over
+    # - death_over
+    # - test_series
     - summary.qmd
     - references.qmd
 
