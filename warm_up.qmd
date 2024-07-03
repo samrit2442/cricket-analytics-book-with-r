@@ -4,3 +4,13 @@ subtitle: Data Collection
 ---
 
 To know the game of cricket, you need to know the history, when and how it was started.
+
+# Data Collection and Sources
+
+There are lot of data sources available online to get started our analysis.
+
+Here, we will mainly focus on the ball-by-ball data so that we can achieve the insights from more granular level.
+
+We will be using open source data from [cricsheet.org](https://cricsheet.org){:target="\_blank"}.
+
+## Data Description

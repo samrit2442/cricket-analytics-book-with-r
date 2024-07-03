@@ -4,20 +4,39 @@
     "href": "index.html",
     "title": "Cricket Analytics with R",
     "section": "",
-    "text": "Preface\nThis is a Quarto book on Cricket Analytics with application in R.\nLike all other Indian boys, in my childhood, cricket was more than just a game, it is a profound emotion, a way of life, and an unrestrained source of happiness."
+    "text": "Preface\nThis is a Quarto book on Cricket Analytics with application in R.\nLike all other Indian boys, in my childhood, cricket was more than just a game, it is a profound emotion, a way of life, and an unrestrained source of happiness.",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "warm_up.html",
     "href": "warm_up.html",
     "title": "1  Warming Up",
     "section": "",
-    "text": "To know the game of cricket, you need to know the history, when and how it was started."
+    "text": "2 Data Collection and Sources\nThere are lot of data sources available online to get started our analysis.\nHere, we will mainly focus on the ball-by-ball data so that we can achieve the insights from more granular level.\nWe will be using open source data from cricsheet.org{:target=“_blank”}.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Warming Up</span>"
+    ]
+  },
+  {
+    "objectID": "warm_up.html#data-description",
+    "href": "warm_up.html#data-description",
+    "title": "1  Warming Up",
+    "section": "2.1 Data Description",
+    "text": "2.1 Data Description",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Warming Up</span>"
+    ]
   },
   {
     "objectID": "summary.html",
     "href": "summary.html",
     "title": "3  The Cricket Data",
     "section": "",
-    "text": "Cricket data is not so clean at when it was extracted from the database. Most of them are ball by ball on different formats such as T20I, ODI, Test, IPL, CPL etc."
+    "text": "Cricket data is not so clean at when it was extracted from the database. Most of them are ball by ball on different formats such as T20I, ODI, Test, IPL, CPL etc.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>The Cricket Data</span>"
+    ]
   }
 ]
