@@ -11,6 +11,8 @@ There are lot of data sources available online to get started our analysis.
 
 Here, we will mainly focus on the ball-by-ball data so that we can achieve the insights from more granular level.
 
-We will be using open source data from [cricsheet.org](https://cricsheet.org){:target="\_blank"}.
+We will be using open source data from [cricsheet.org](https://cricsheet.org).
 
 ## Data Description
+
+The raw data will be downloaded as a zip file. After unzipping we should have multiple .csv files that corresponds to each T20 International matches. There will be another file with same match ids but a suffix "\_info" giving the information of match summary. Our first objective will be to collate all the ball by ball data in a single file or a data frame in R.

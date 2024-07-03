@@ -14,7 +14,7 @@
     "href": "warm_up.html",
     "title": "1  Warming Up",
     "section": "",
-    "text": "2 Data Collection and Sources\nThere are lot of data sources available online to get started our analysis.\nHere, we will mainly focus on the ball-by-ball data so that we can achieve the insights from more granular level.\nWe will be using open source data from cricsheet.org{:target=“_blank”}.",
+    "text": "2 Data Collection and Sources\nThere are lot of data sources available online to get started our analysis.\nHere, we will mainly focus on the ball-by-ball data so that we can achieve the insights from more granular level.\nWe will be using open source data from cricsheet.org.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Warming Up</span>"
     ]
@@ -24,7 +24,7 @@
     "href": "warm_up.html#data-description",
     "title": "1  Warming Up",
     "section": "2.1 Data Description",
-    "text": "2.1 Data Description",
+    "text": "2.1 Data Description\nThe raw data will be downloaded as a zip file. After unzipping we should have multiple .csv files that corresponds to each T20 International matches. There will be another file with same match ids but a suffix “_info” giving the information of match summary. Our first objective will be to collate all the ball by ball data in a single file or a data frame in R.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Warming Up</span>"
     ]
