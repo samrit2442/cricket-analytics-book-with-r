@@ -18,6 +18,12 @@ book:
 
 bibliography: references.bib
 
+quarto-preview:
+  enabled: false
+
+execute:
+  freeze: true
+
 format:
   html:
     theme: cosmo

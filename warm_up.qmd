@@ -16,3 +16,12 @@ We will be using open source data from [cricsheet.org](https://cricsheet.org).
 ## Data Description
 
 The raw data will be downloaded as a zip file. After unzipping we should have multiple .csv files that corresponds to each T20 International matches. There will be another file with same match ids but a suffix "\_info" giving the information of match summary. Our first objective will be to collate all the ball by ball data in a single file or a data frame in R.
+
+We will download the raw data as a zip file, unzip and save all the files in a directory.
+
+```{r}
+#| eval: false
+url <- "https://cricsheet.org/downloads/t20s_male_csv2.zip"
+download.file(url, dest = "bbb_dataset.zip", mode = "wb")
+# unzip("t20s_male_csv2.zip", exdir = dataset_name)
+```

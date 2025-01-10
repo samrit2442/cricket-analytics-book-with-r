@@ -1,0 +1,15 @@
+{
+  "hash": "3b44a0051dac21a179a364b7c466a3dc",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Warming Up\nsubtitle: Data Collection\n---\n\n\nTo know the game of cricket, you need to know the history, when and how it was started.\n\n# Data Collection and Sources\n\nThere are lot of data sources available online to get started our analysis.\n\nHere, we will mainly focus on the ball-by-ball data so that we can achieve the insights from more granular level.\n\nWe will be using open source data from [cricsheet.org](https://cricsheet.org).\n\n## Data Description\n\nThe raw data will be downloaded as a zip file. After unzipping we should have multiple .csv files that corresponds to each T20 International matches. There will be another file with same match ids but a suffix \"\\_info\" giving the information of match summary. Our first objective will be to collate all the ball by ball data in a single file or a data frame in R.\n\nWe will download the raw data as a zip file, unzip and save all the files in a directory.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nurl <- \"https://cricsheet.org/downloads/t20s_male_csv2.zip\"\ndownload.file(url, dest = \"bbb_dataset.zip\", mode = \"wb\")\n# unzip(\"t20s_male_csv2.zip\", exdir = dataset_name)\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

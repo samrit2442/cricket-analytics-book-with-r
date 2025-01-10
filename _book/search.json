@@ -24,7 +24,7 @@
     "href": "warm_up.html#data-description",
     "title": "1  Warming Up",
     "section": "2.1 Data Description",
-    "text": "2.1 Data Description\nThe raw data will be downloaded as a zip file. After unzipping we should have multiple .csv files that corresponds to each T20 International matches. There will be another file with same match ids but a suffix “_info” giving the information of match summary. Our first objective will be to collate all the ball by ball data in a single file or a data frame in R.",
+    "text": "2.1 Data Description\nThe raw data will be downloaded as a zip file. After unzipping we should have multiple .csv files that corresponds to each T20 International matches. There will be another file with same match ids but a suffix “_info” giving the information of match summary. Our first objective will be to collate all the ball by ball data in a single file or a data frame in R.\nWe will download the raw data as a zip file, unzip and save all the files in a directory.\n\nurl &lt;- \"https://cricsheet.org/downloads/t20s_male_csv2.zip\"\ndownload.file(url, dest = \"bbb_dataset.zip\", mode = \"wb\")\n# unzip(\"t20s_male_csv2.zip\", exdir = dataset_name)",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Warming Up</span>"
     ]
