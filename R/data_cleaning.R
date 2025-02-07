@@ -17,7 +17,7 @@ t20_1 <- t20 |>
   select(-season, -other_wicket_type, -other_player_dismissed) |> 
   mutate(over = ceiling(ball),
                 over_type = if_else(over >= 1 & over <= 6, "Powerplay",
-                                    if_else(over >= 7 & over <= 16, "Middle Over", "Death Over")), .after = ball) |>
+                                    if_else(over >= 7 & over <= 16, "Middle Over", "Death Over"))) |>
   mutate(isDot = if_else(runs_off_bat == 0, 1, 0),
                 isOne = if_else(runs_off_bat == 1, 1, 0),
                 isTwo = if_else(runs_off_bat == 2, 1, 0),
@@ -29,7 +29,7 @@ t20_1 <- t20 |>
                 start_date = as.Date(start_date)) |> 
   filter(innings == 1 | innings == 2)
 
-# Selecting top 20 countries by their recent ICC T20I ranking
+# Selecting top 15 countries by their recent ICC T20I ranking
 
 top_15_countries <- c("Pakistan", "England", "India", "Australia",
                       "South Africa", "New Zealand", "Afghanistan", 
