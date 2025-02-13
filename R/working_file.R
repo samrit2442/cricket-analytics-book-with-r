@@ -41,6 +41,33 @@ date1 <- paste0(date, collapse = "") |> toupper()
 saveRDS(t20, file = paste0("./data/t20_raw_data", date1, ".rds"))
 
 
+# ------------------------------------------------------------------------------
+
+# Cleaning Match by Match Data
+
+t20_mat_data <- list.files(path = "./data/DATASET_09JAN2025_1219",
+                             pattern = "*_info.csv",
+                             full.names = T)
+
+md <-  vector(mode = "list", length = length(t20_mat_data))
+ms_full <- vector(mode = "list", length = length(t20_mat_data))
+
+test_df = read.csv2(file = t20_mat_data[1000], row.names = NULL, header = F)
+
+df2 <- test_df |>
+  separate_wider_delim(V1,
+                       delim = ",",
+                       names = c("C1", "C2", "C3", "C4", "C5"),
+                       too_few = "align_start")
+  
+
+df2 %>%
+  filter(C1 == "info") %>%  # Keep only match info rows
+  select(Category = C2, Value = C3) %>%  # Rename columns
+  distinct() |> 
+  print(n = 20)
+
+toss_winner <- paste0("🪙")
 
 
 

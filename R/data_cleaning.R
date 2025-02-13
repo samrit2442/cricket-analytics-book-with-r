@@ -16,8 +16,8 @@ t20_1 <- t20 |>
   as_tibble() |> 
   select(-season, -other_wicket_type, -other_player_dismissed) |> 
   mutate(over = ceiling(ball),
-                over_type = if_else(over >= 1 & over <= 6, "Powerplay",
-                                    if_else(over >= 7 & over <= 16, "Middle Over", "Death Over"))) |>
+         over_type = if_else(over >= 1 & over <= 6, "Powerplay",
+                        if_else(over >= 7 & over <= 16, "Middle Over", "Death Over"))) |>
   mutate(isDot = if_else(runs_off_bat == 0, 1, 0),
                 isOne = if_else(runs_off_bat == 1, 1, 0),
                 isTwo = if_else(runs_off_bat == 2, 1, 0),
