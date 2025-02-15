@@ -3,6 +3,7 @@ pacman::p_load(tidyverse)
 
 # Read the data
 
+match_sum <- readRDS(file = "./data/t20_raw_match_data09JAN2025_1219.rds")
 t20 <- readRDS(file = "./data/t20_raw_data09JAN2025_1219.rds")
 t20_bkp <- t20
 
@@ -35,6 +36,25 @@ top_15_countries <- c("Pakistan", "England", "India", "Australia",
                       "South Africa", "New Zealand", "Afghanistan", 
                       "West Indies", "Bangladesh", "Sri Lanka", "Ireland", 
                       "Scotland", "Zimbabwe", "Netherlands", "USA")
+
+# Mapping of Country names with flag emoji
+
+country_flag <- tibble::tribble(~batting_team, ~batting_team_emoji,
+                                "Pakistan", "🇵🇰",
+                                "England", "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+                                "India", "🇮🇳",
+                                "Australia", "🇦🇺",
+                                "South Africa", "🇿🇦",
+                                "New Zealand", "🇳🇿",
+                                "Afghanistan", "🇦🇫",
+                                "West Indies", "🌴",
+                                "Bangladesh", "🇧🇩",
+                                "Sri Lanka", "🇱🇰",
+                                "Ireland", "🇮🇪",
+                                "Scotland", "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+                                "Zimbabwe", "🇿🇼",
+                                "Netherlands", "🇳🇱",
+                                "USA", "🇺🇸")
 
 
 t20_2 <- t20_1 |>

@@ -1,9 +1,7 @@
 library(pacman)
 pacman::p_load(tidyverse, readxl, reader, plyr, gt, gtsummary)
 
-t20 <- readRDS(file = "./data/t20_raw_data09JAN2025_1219.rds")
-match_sum <- readRDS(file = "./data/t20_raw_match_data09JAN2025_1219.rds")
-
+source("./R/data_cleaning.R")
 
 # Bowler's wicket types
 wkt_types <- c("bowled", "caught", "caught and bowled", "hit wicket", "lbw", "stumped")
@@ -25,34 +23,36 @@ mat_date <- format(as.Date(mat_date), "%d %B, %Y")
 mat_date
 
 all_players <- match_data |>
-  dplyr::select(batting_team, striker) |>
+  dplyr::select(batting_team, striker, innings) |>
   dplyr::distinct() |>
   dplyr::rename(player = striker) |>
   bind_rows(
     match_data |>
-      dplyr::select(batting_team, non_striker) |>
+      dplyr::select(batting_team, non_striker, innings) |>
       dplyr::distinct() |>
       dplyr::rename(player = non_striker))|>
   dplyr::distinct()
+all_players
 
 # Extract the match details
 bat_dtls_1 <- match_data |> 
   dplyr::group_by(innings, batting_team, striker) |> 
   dplyr::summarise(runs = sum(runs_off_bat), balls = n(), 
             fours = sum(isFour), sixes = sum(isSix))
+bat_dtls_1
 
 bat_dtls_2 <- match_data |> 
   dplyr::distinct(player_dismissed) |> 
   dplyr::mutate(out = 1) |>
   full_join(bat_dtls_1, by = c("player_dismissed" = "striker")) |> 
-  full_join(all_players, by = c("player_dismissed" = "player", "batting_team")) |> 
+  full_join(all_players, by = c("player_dismissed" = "player", "batting_team", "innings")) |> 
   dplyr::filter(player_dismissed != "0") |> 
   dplyr::mutate(across(where(is.numeric), ~replace_na(., 0))) |> 
   dplyr::mutate(innings = ifelse(innings == 0, 
                                  max(innings[batting_team == batting_team]), 
                                  innings)) |> 
   dplyr::arrange(innings, desc(runs), balls, .by_group = TRUE)
-
+bat_dtls_2
 
 bowl_dtls_1 <- match_data |> 
   dplyr::mutate(isBowlWkt = if_else(wicket_type %in% wkt_types, 1, 0)) |>
@@ -110,6 +110,7 @@ mat_results <- match_data |>
                    wickets = sum(isOut), 
                    balls = sum(wides == 0 & noballs == 0)) |> 
   ungroup() |> 
+  inner_join(country_flag) |>
   dplyr::mutate(summary = case_when(batting_team == toss ~ paste0(batting_team, 
                                                       "      ", 
                                                       runs, 
@@ -216,7 +217,8 @@ mat_report |>
     ),
     locations = cells_body(rows = c(1:6))  # Column headers
   ) |>
-  opt_table_font(font = google_font("Outfit"), size = px(21)) |> # Liter, Kanit
+  opt_table_font(font = google_font("Outfit"), size = px(21)) |> 
+  # Liter, Kanit, Lato, Nunito, Outfit, Oswald, PT Sans, Raleway, Roboto, Source Sans Pro, Ubuntu
   tab_options(table.align = "center") |>
   tab_source_note(source_note = md(paste0(
       "<div style='text-align: left; 
@@ -231,9 +233,9 @@ mat_report |>
       "<div style='text-align: center; 
                  font-size: 24px; 
                  font-weight: bold; 
-                 color: darkgreen;  /* Text color */
-                 background-color: #f0f0f0;  /* Light grey background */
-                 display: inline-block;  /* Prevent full-width stretching */
+                 color: darkgreen; 
+                 background-color: #f0f0f0;  
+                 display: inline-block;  
                  width: 100%;'>",  
       mat_sum(), 
       "</div>"
