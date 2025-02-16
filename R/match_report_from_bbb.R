@@ -189,7 +189,7 @@ mat_report |>
              subtitle = md(paste0(mat_results$batting_team[1], 
                                   " vs. ", 
                                   mat_results$batting_team[2],
-                                  " , ", event,
+                                  ", ", event,
                                   "<br>📅 ", mat_date,
                                   "<br>🏟 ", venue))) |>
   tab_row_group(label = mat_results$summary[1], rows = 1:3) |>
