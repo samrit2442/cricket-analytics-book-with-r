@@ -2,7 +2,6 @@ library(pacman)
 pacman::p_load(tidyverse)
 
 # Read the data
-
 match_sum <- readRDS(file = "./data/t20_raw_match_data09JAN2025_1219.rds")
 t20 <- readRDS(file = "./data/t20_raw_data09JAN2025_1219.rds")
 t20_bkp <- t20
