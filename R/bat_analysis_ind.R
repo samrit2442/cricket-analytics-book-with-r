@@ -1,7 +1,7 @@
 library(pacman)
 pacman::p_load(tidyverse)
 
-plyr_name <- "Yuvraj Singh"
+plyr_name <- "RG Sharma"
 
 top_10_bat_stat <- t20_2 |>
   dplyr::mutate(year = year(ymd(start_date))) |>
