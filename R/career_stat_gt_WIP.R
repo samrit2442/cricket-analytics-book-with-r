@@ -65,3 +65,12 @@ df_long |>
     footnote = "Afghanistan matches are excluded.",
     locations = cells_title(groups = "title")  # Adds footnote to the title
   )
+
+
+
+
+
+
+
+
+

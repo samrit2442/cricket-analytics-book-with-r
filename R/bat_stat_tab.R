@@ -1,7 +1,16 @@
 library(pacman)
-pacman::p_load(tidyverse)
+pacman::p_load(tidyverse, gt, tictoc)
 
-plyr_name <- "RG Sharma"
+# Getting the raw data
+tic()
+source("./R/data_cleaning.R") # Approx. 6 seconds
+toc()
+
+plyr_name <- t20_2$striker |> 
+  unique() |> 
+  sample(1)
+plyr_name
+# plyr_name <- "RG Sharma"
 
 # Total Number of Dismissals
 diss <- t20_1 |> 
@@ -32,6 +41,7 @@ bat_stat_1 <- plyr_data |>
                    SR = round(Runs/Balls*100, 2), 
                    Fours = sum(isFour), Sixes = sum(isSix),
                    Dots = sum(isDot),
+                   Country = first(batting_team),
                    Opponent = first(bowling_team)) |> 
   left_join(diss) |> 
   dplyr::mutate(wicket_type = if_else(is.na(wicket_type), "not out", wicket_type),
@@ -64,7 +74,27 @@ career_overview <- bat_stat_1 |>
   dplyr::mutate(Innings = tot_inng,
                 `Batting Average` = round(Runs/(tot_inng - NO), 2),
                 `Runs Per Innings` = round(Runs/Innings, 2),
-                `Strike Rate` = round(Runs/Balls*100, 2))
+                `Strike Rate` = round(Runs/Balls*100, 2)) |> 
+  cbind(select(hs, `Highest Score`)) |> 
+  dplyr::mutate(across(everything(), as.character)) |> 
+  pivot_longer(cols = c(Innings, Runs, Balls, `Batting Average`,
+                        `Runs Per Innings`, `Strike Rate`, NO, `Highest Score`,
+                        Dots, Fours, Sixes, `30s`, `50s`, `100s`),
+               names_to = "Stat", values_to = "Value")
 
-
+# Career Overview gt Table
+career_overview |> 
+  gt() |> 
+  tab_options(column_labels.hidden = TRUE) |>
+  tab_header(title = md(paste0("**Batting Statistics🏏 in T20I <br>", plyr_name, "**")),
+             subtitle = md(paste0("*", bat_stat_1$Country[1], "*"))) |> 
+  opt_table_font(font = google_font("Outfit"), size = px(21)) |>
+  tab_style(
+    style = cell_fill(color = "#f4f4f4"),
+    locations = cells_body(rows = seq(1, nrow(career_overview), by = 2))  # Alternating row colors
+  ) |> 
+  tab_footnote(
+    footnote = "Afghanistan matches are excluded.",
+    locations = cells_title(groups = "title")  # Adds footnote to the title
+  )
 
