@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Cricket Analytics with R",
+    "title": "An Introduction to Cricket Analytics with R",
     "section": "",
     "text": "Preface\nThis is a Quarto book on Cricket Analytics with application in R.\nLike all other Indian boys, in my childhood, cricket was more than just a game, it is a profound emotion, a way of life, and an unrestrained source of happiness.",
     "crumbs": [
@@ -14,7 +14,7 @@
     "href": "warm_up.html",
     "title": "1  Warming Up",
     "section": "",
-    "text": "2 Data Collection and Sources\nThere are lot of data sources available online to get started our analysis.\nHere, we will mainly focus on the ball-by-ball data so that we can achieve the insights from more granular level.\nWe will be using open source data from cricsheet.org.",
+    "text": "2 Data Collection and Sources\nTo know the game of cricket, you need to know the history, when and how it was started.\nThere are lot of data sources available online to get started our analysis.\nHere, we will mainly focus on the ball-by-ball data so that we can achieve the insights from more granular level.\nWe will be using open source data from cricsheet.org.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Warming Up</span>"
     ]
@@ -24,9 +24,29 @@
     "href": "warm_up.html#data-description",
     "title": "1  Warming Up",
     "section": "2.1 Data Description",
-    "text": "2.1 Data Description\nThe raw data will be downloaded as a zip file. After unzipping we should have multiple .csv files that corresponds to each T20 International matches. There will be another file with same match ids but a suffix “_info” giving the information of match summary. Our first objective will be to collate all the ball by ball data in a single file or a data frame in R.\nWe will download the raw data as a zip file, unzip and save all the files in a directory.\n\nurl &lt;- \"https://cricsheet.org/downloads/t20s_male_csv2.zip\"\ndownload.file(url, dest = \"bbb_dataset.zip\", mode = \"wb\")\n# unzip(\"t20s_male_csv2.zip\", exdir = dataset_name)",
+    "text": "2.1 Data Description\nThe raw data will be downloaded as a zip file. After unzipping we should have multiple .csv files that corresponds to each T20 International matches. There will be another file with same match ids but a suffix “_info” giving the information of match summary. Our first objective will be to collate all the ball by ball data in a single file or a data frame in R.\nWe will download the raw data as a zip file, then unzip and save all the files in a directory.\n\nurl &lt;- \"https://cricsheet.org/downloads/t20s_male_csv2.zip\"\ndownload.file(url, dest = \"bbb_dataset.zip\", mode = \"wb\")\n# unzip(\"t20s_male_csv2.zip\", exdir = dataset_name)\n\nNow, we have two sets of data at\n\n‘Ball by Ball’ level.\n‘Match’ level.\n\nAfter unzipping the file, we have a bunch of .csv files with name “1234567.csv” and “1234567_info.csv”.\nThis “_info.csv” is corresponding to match level data and the other is ball-by-ball.\nNext, we will clean up both the datasets separately.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Warming Up</span>"
+    ]
+  },
+  {
+    "objectID": "powerplay.html",
+    "href": "powerplay.html",
+    "title": "2  Powerplay",
+    "section": "",
+    "text": "2.1 Ball-by-ball data\nThere are total 22 columns in the raw ball-by-ball data. They are following:\nglimpse(t20)\n\nRows: 584,335\nColumns: 22\n$ match_id               &lt;int&gt; 1001349, 1001349, 1001349, 1001349, 1001349, 10…\n$ season                 &lt;chr&gt; \"2016/17\", \"2016/17\", \"2016/17\", \"2016/17\", \"20…\n$ start_date             &lt;chr&gt; \"2017-02-17\", \"2017-02-17\", \"2017-02-17\", \"2017…\n$ venue                  &lt;chr&gt; \"Melbourne Cricket Ground\", \"Melbourne Cricket …\n$ innings                &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…\n$ ball                   &lt;dbl&gt; 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.…\n$ batting_team           &lt;chr&gt; \"Australia\", \"Australia\", \"Australia\", \"Austral…\n$ bowling_team           &lt;chr&gt; \"Sri Lanka\", \"Sri Lanka\", \"Sri Lanka\", \"Sri Lan…\n$ striker                &lt;chr&gt; \"AJ Finch\", \"AJ Finch\", \"AJ Finch\", \"M Klinger\"…\n$ non_striker            &lt;chr&gt; \"M Klinger\", \"M Klinger\", \"M Klinger\", \"AJ Finc…\n$ bowler                 &lt;chr&gt; \"SL Malinga\", \"SL Malinga\", \"SL Malinga\", \"SL M…\n$ runs_off_bat           &lt;int&gt; 0, 0, 1, 2, 0, 3, 0, 1, 0, 0, 4, 2, 1, 1, 0, 0,…\n$ extras                 &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…\n$ wides                  &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ noballs                &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ byes                   &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ legbyes                &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ penalty                &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ wicket_type            &lt;chr&gt; \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\",…\n$ player_dismissed       &lt;chr&gt; \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\",…\n$ other_wicket_type      &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ other_player_dismissed &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\nNext we will perform the data cleaning steps as below.\nt20[t20 == \"\"] &lt;- NA\nt20[is.na(t20)] &lt;- 0",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Powerplay</span>"
+    ]
+  },
+  {
+    "objectID": "powerplay.html#ball-by-ball-data",
+    "href": "powerplay.html#ball-by-ball-data",
+    "title": "2  Powerplay",
+    "section": "",
+    "text": "Replacing all NA values with 0.\n\n\n\nRemoving season , otehr_wicket_type and other_player_dismissed column as they are not required in our analysis.\nCreating a new variable over i.e. the over number at which the particular ball was bowled.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Powerplay</span>"
     ]
   },
   {

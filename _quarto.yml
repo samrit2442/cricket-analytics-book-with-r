@@ -1,11 +1,15 @@
 project:
   type: book
+  # render: false
 
 book:
   favicon: "cric_icon.png"
-  title: "Cricket Analytics with R"
+  title: "An Introduction to Cricket Analytics with R"
+  reader-mode: true
   author: "Samrit Pramanik"
-  date: "11/27/2023"
+  date: "01/25/2025"
+  site-url: https://samrit.quarto.pub/carb
+  repo-url: https://github.com/samrit2442/cricket-analytics-book-with-r
   chapters:
     - index.qmd
     - warm_up.qmd
@@ -18,11 +22,11 @@ book:
 
 bibliography: references.bib
 
-quarto-preview:
-  enabled: false
+# quarto-preview:
+#   enabled: false
 
-execute:
-  freeze: true
+# execute:
+#   freeze: true
 
 format:
   html:

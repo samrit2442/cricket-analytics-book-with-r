@@ -1,9 +1,9 @@
 library(pacman)
 pacman::p_load(tidyverse, readxl, reader, plyr)
 
-test_mat_data <- read.csv(file.choose())
+# test_mat_data <- read.csv(file.choose())
 
-test_mat_data$shot |> unique()
+# test_mat_data$shot |> unique()
 
 date <- format(Sys.time(), c("%d","%b","%Y","_","%H","%M"))
 dataset_name <- paste0(date, collapse = '') |> toupper()

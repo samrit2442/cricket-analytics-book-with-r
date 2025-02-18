@@ -2,3 +2,30 @@
 title: Powerplay
 subtitle: Data Cleaning and Wrangling
 ---
+
+## Ball-by-ball data
+
+There are total 22 columns in the raw ball-by-ball data. They are following:
+
+```{r, message=FALSE, warning=FALSE}
+#| echo: false
+library(tidyverse)
+t20 <- readRDS(file = "./data/t20_raw_data09JAN2025_1219.rds")
+```
+
+```{r}
+glimpse(t20)
+```
+
+**Next we will perform the data cleaning steps as below.**
+
+-   Replacing all `NA` values with 0.
+
+```{r, eval=FALSE}
+t20[t20 == ""] <- NA
+t20[is.na(t20)] <- 0
+```
+
+-   Removing `season` , `otehr_wicket_type` and `other_player_dismissed` column as they are not required in our analysis.
+
+-   Creating a new variable `over` i.e. the over number at which the particular ball was bowled.
