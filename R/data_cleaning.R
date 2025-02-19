@@ -30,14 +30,12 @@ t20_1 <- t20 |>
   filter(innings == 1 | innings == 2)
 
 # Selecting top 15 countries by their recent ICC T20I ranking
-
 top_15_countries <- c("Pakistan", "England", "India", "Australia",
                       "South Africa", "New Zealand", "Afghanistan", 
                       "West Indies", "Bangladesh", "Sri Lanka", "Ireland", 
                       "Scotland", "Zimbabwe", "Netherlands", "USA")
 
 # Mapping of Country names with flag emoji
-
 country_flag <- tibble::tribble(~batting_team, ~batting_team_emoji,
                                 "Pakistan", "🇵🇰",
                                 "England", "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -55,7 +53,7 @@ country_flag <- tibble::tribble(~batting_team, ~batting_team_emoji,
                                 "Netherlands", "🇳🇱",
                                 "USA", "🇺🇸")
 
-
+# Filtering out top 15 Countries data
 t20_2 <- t20_1 |>
   filter(batting_team %in% top_15_countries & bowling_team %in% top_15_countries)
 

@@ -1,0 +1,13 @@
+---
+title: Middle Over
+subtitle: Batting Analysis
+format: html
+---
+
+# Batting Analysis
+
+## Individual Player Performance
+
+In a typical cricket match, the batting performance of an individual player is some time crucial in determining the match result.
+
+First, we choose a player to analyze. Then filter out this batter's data from the raw data by using `filter(striker == player_name)`.

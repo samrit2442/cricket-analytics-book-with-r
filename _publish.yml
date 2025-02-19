@@ -1,4 +1,4 @@
 - source: project
   quarto-pub:
     - id: fecbbe69-1d13-4eba-bd52-8334a3206ecc
-      url: https://samrit.quarto.pub/carb
+      url: 'https://samrit.quarto.pub/carb'

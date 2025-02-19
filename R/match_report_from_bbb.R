@@ -189,7 +189,7 @@ mat_report |>
              subtitle = md(paste0(mat_results$batting_team[1], 
                                   " vs. ", 
                                   mat_results$batting_team[2],
-                                  ", ", event,
+                                  "<br>", event,
                                   "<br>📅 ", mat_date,
                                   "<br>🏟 ", venue))) |>
   tab_row_group(label = mat_results$summary[1], rows = 1:3) |>
@@ -198,8 +198,8 @@ mat_report |>
   tab_options(column_labels.hidden = TRUE) |>
   tab_style(
     style = list(
-      cell_fill(color = "black"),   # Yellow background for team totals
-      cell_text(weight = "bold", color = "grey", align = "center", size = "24px")
+      cell_fill(color = "#0a0740"),   # Yellow background for team totals
+      cell_text(weight = "bold", color = "#ecf3b8", align = "center", size = "24px")
     ),
     locations = cells_row_groups() # Targeting team score rows
   ) |> 

@@ -26,6 +26,8 @@ t20[t20 == ""] <- NA
 t20[is.na(t20)] <- 0
 ```
 
--   Removing `season` , `otehr_wicket_type` and `other_player_dismissed` column as they are not required in our analysis.
+-   Removing `season`, `other_wicket_type` and `other_player_dismissed` column as they are not required in our analysis.
 
--   Creating a new variable `over` i.e. the over number at which the particular ball was bowled.
+-   Creating a new variable `over` i.e. the over number at which the particular ball was bowled and `over_type` i.e. the phase of play (Powerplay, Middle Over, Death Over).
+
+-   Next, creating bunch of binary variables `isOne`, `isTwo`, `isThree`, `isFour`, `isSix` from `runs_off_bat` and `isOut` from `wicket_type`. Also, creating another variable `team_runs` after combining `runs_off_bat` and `extras`.

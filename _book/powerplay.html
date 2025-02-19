@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./middle_over.html" rel="next">
 <link href="./warm_up.html" rel="prev">
 <link href="./cric_icon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -169,8 +169,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./middle_over.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Middle Over</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Cricket Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Cricket Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -257,8 +263,9 @@ $ other_player_dismissed &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>t20[<span class="fu">is.na</span>(t20)] <span class="ot">&lt;-</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li><p>Removing <code>season</code> , <code>otehr_wicket_type</code> and <code>other_player_dismissed</code> column as they are not required in our analysis.</p></li>
-<li><p>Creating a new variable <code>over</code> i.e.&nbsp;the over number at which the particular ball was bowled.</p></li>
+<li><p>Removing <code>season</code>, <code>other_wicket_type</code> and <code>other_player_dismissed</code> column as they are not required in our analysis.</p></li>
+<li><p>Creating a new variable <code>over</code> i.e.&nbsp;the over number at which the particular ball was bowled and <code>over_type</code> i.e.&nbsp;the phase of play (Powerplay, Middle Over, Death Over).</p></li>
+<li><p>Next, creating bunch of binary variables <code>isOne</code>, <code>isTwo</code>, <code>isThree</code>, <code>isFour</code>, <code>isSix</code> from <code>runs_off_bat</code> and <code>isOut</code> from <code>wicket_type</code>. Also, creating another variable <code>team_runs</code> after combining <code>runs_off_bat</code> and <code>extras</code>.</p></li>
 </ul>
 
 
@@ -347,6 +354,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -457,6 +466,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -689,8 +699,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="The Cricket Data">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Cricket Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./middle_over.html" class="pagination-link" aria-label="Middle Over">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Middle Over</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

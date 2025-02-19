@@ -14,7 +14,7 @@ book:
     - index.qmd
     - warm_up.qmd
     - powerplay.qmd
-    # - middle_over
+    - middle_over.qmd
     # - death_over
     # - test_series
     - summary.qmd

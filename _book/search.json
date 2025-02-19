@@ -14,7 +14,7 @@
     "href": "warm_up.html",
     "title": "1  Warming Up",
     "section": "",
-    "text": "2 Data Collection and Sources\nTo know the game of cricket, you need to know the history, when and how it was started.\nThere are lot of data sources available online to get started our analysis.\nHere, we will mainly focus on the ball-by-ball data so that we can achieve the insights from more granular level.\nWe will be using open source data from cricsheet.org.",
+    "text": "2 Data Collection and Sources\nThere are lot of data sources available online to get started our analysis.\nHere, we will mainly focus on the ball-by-ball data so that we can achieve the insights from more granular level.\nWe will be using open source data from cricsheet.org.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Warming Up</span>"
     ]
@@ -44,19 +44,39 @@
     "href": "powerplay.html#ball-by-ball-data",
     "title": "2  Powerplay",
     "section": "",
-    "text": "Replacing all NA values with 0.\n\n\n\nRemoving season , otehr_wicket_type and other_player_dismissed column as they are not required in our analysis.\nCreating a new variable over i.e. the over number at which the particular ball was bowled.",
+    "text": "Replacing all NA values with 0.\n\n\n\nRemoving season, other_wicket_type and other_player_dismissed column as they are not required in our analysis.\nCreating a new variable over i.e. the over number at which the particular ball was bowled and over_type i.e. the phase of play (Powerplay, Middle Over, Death Over).\nNext, creating bunch of binary variables isOne, isTwo, isThree, isFour, isSix from runs_off_bat and isOut from wicket_type. Also, creating another variable team_runs after combining runs_off_bat and extras.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Powerplay</span>"
     ]
   },
   {
+    "objectID": "middle_over.html",
+    "href": "middle_over.html",
+    "title": "3  Middle Over",
+    "section": "",
+    "text": "4 Batting Analysis",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Middle Over</span>"
+    ]
+  },
+  {
+    "objectID": "middle_over.html#individual-player-performance",
+    "href": "middle_over.html#individual-player-performance",
+    "title": "3  Middle Over",
+    "section": "4.1 Individual Player Performance",
+    "text": "4.1 Individual Player Performance\nIn a typical cricket match, the batting performance of an individual player is some time crucial in determining the match result.\nFirst, we choose a player to analyze. Then filter out this batter’s data from the raw data by using filter(striker == player_name).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Middle Over</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "3  The Cricket Data",
+    "title": "4  The Cricket Data",
     "section": "",
     "text": "Cricket data is not so clean at when it was extracted from the database. Most of them are ball by ball on different formats such as T20I, ODI, Test, IPL, CPL etc.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>The Cricket Data</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>The Cricket Data</span>"
     ]
   }
 ]
