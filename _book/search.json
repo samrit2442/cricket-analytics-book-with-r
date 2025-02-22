@@ -14,7 +14,7 @@
     "href": "warm_up.html",
     "title": "1  Warming Up",
     "section": "",
-    "text": "2 Data Collection and Sources\nThere are lot of data sources available online to get started our analysis.\nHere, we will mainly focus on the ball-by-ball data so that we can achieve the insights from more granular level.\nWe will be using open source data from cricsheet.org.",
+    "text": "1.1 Data Collection and Sources\nTo know the game of cricket, you need to know the history, when and how it was started.\nThere are lot of data sources available online to get started our analysis.\nHere, we will mainly focus on the ball-by-ball data so that we can achieve the insights from more granular level.\nWe will be using open source data from cricsheet.org.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Warming Up</span>"
     ]
@@ -23,8 +23,8 @@
     "objectID": "warm_up.html#data-description",
     "href": "warm_up.html#data-description",
     "title": "1  Warming Up",
-    "section": "2.1 Data Description",
-    "text": "2.1 Data Description\nThe raw data will be downloaded as a zip file. After unzipping we should have multiple .csv files that corresponds to each T20 International matches. There will be another file with same match ids but a suffix “_info” giving the information of match summary. Our first objective will be to collate all the ball by ball data in a single file or a data frame in R.\nWe will download the raw data as a zip file, then unzip and save all the files in a directory.\n\nurl &lt;- \"https://cricsheet.org/downloads/t20s_male_csv2.zip\"\ndownload.file(url, dest = \"bbb_dataset.zip\", mode = \"wb\")\n# unzip(\"t20s_male_csv2.zip\", exdir = dataset_name)\n\nNow, we have two sets of data at\n\n‘Ball by Ball’ level.\n‘Match’ level.\n\nAfter unzipping the file, we have a bunch of .csv files with name “1234567.csv” and “1234567_info.csv”.\nThis “_info.csv” is corresponding to match level data and the other is ball-by-ball.\nNext, we will clean up both the datasets separately.",
+    "section": "1.2 Data Description",
+    "text": "1.2 Data Description\nThe raw data will be downloaded as a zip file. After unzipping we should have multiple .csv files that corresponds to each T20 International matches. There will be another file with same match ids but a suffix “_info” giving the information of match summary. Our first objective will be to collate all the ball by ball data in a single file or a data frame in R.\nWe will download the raw data as a zip file, then unzip and save all the files in a directory.\n\nurl &lt;- \"https://cricsheet.org/downloads/t20s_male_csv2.zip\"\ndownload.file(url, dest = \"bbb_dataset.zip\", mode = \"wb\")\n# unzip(\"t20s_male_csv2.zip\", exdir = dataset_name)\n\nNow, we have two sets of data at\n\n‘Ball by Ball’ level.\n‘Match’ level.\n\nAfter unzipping the file, we have a bunch of .csv files with name “1234567.csv” and “1234567_info.csv”.\nThis “_info.csv” is corresponding to match level data and the other is ball-by-ball.\nNext, we will clean up both the datasets separately.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Warming Up</span>"
     ]
@@ -54,17 +54,17 @@
     "href": "middle_over.html",
     "title": "3  Middle Over",
     "section": "",
-    "text": "4 Batting Analysis",
+    "text": "3.1 Batting Analysis",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Middle Over</span>"
     ]
   },
   {
-    "objectID": "middle_over.html#individual-player-performance",
-    "href": "middle_over.html#individual-player-performance",
+    "objectID": "middle_over.html#batting-analysis",
+    "href": "middle_over.html#batting-analysis",
     "title": "3  Middle Over",
-    "section": "4.1 Individual Player Performance",
-    "text": "4.1 Individual Player Performance\nIn a typical cricket match, the batting performance of an individual player is some time crucial in determining the match result.\nFirst, we choose a player to analyze. Then filter out this batter’s data from the raw data by using filter(striker == player_name).",
+    "section": "",
+    "text": "3.1.1 Individual Player Performance\nIn a typical cricket match, the batting performance of an individual player is some time crucial in determining the match result.\nFirst, we choose a player to analyze. Then filter out this batter’s data from the raw data by using filter(striker == player_name).",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Middle Over</span>"
     ]

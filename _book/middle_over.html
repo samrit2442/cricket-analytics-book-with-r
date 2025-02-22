@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -161,9 +161,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#batting-analysis" id="toc-batting-analysis" class="nav-link active" data-scroll-target="#batting-analysis"><span class="header-section-number">4</span> Batting Analysis</a>
+  <li><a href="#batting-analysis" id="toc-batting-analysis" class="nav-link active" data-scroll-target="#batting-analysis"><span class="header-section-number">3.1</span> Batting Analysis</a>
   <ul class="collapse">
-  <li><a href="#individual-player-performance" id="toc-individual-player-performance" class="nav-link" data-scroll-target="#individual-player-performance"><span class="header-section-number">4.1</span> Individual Player Performance</a></li>
+  <li><a href="#individual-player-performance" id="toc-individual-player-performance" class="nav-link" data-scroll-target="#individual-player-performance"><span class="header-section-number">3.1.1</span> Individual Player Performance</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -191,10 +191,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="batting-analysis" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Batting Analysis</h1>
-<section id="individual-player-performance" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="individual-player-performance"><span class="header-section-number">4.1</span> Individual Player Performance</h2>
+<section id="batting-analysis" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="batting-analysis"><span class="header-section-number">3.1</span> Batting Analysis</h2>
+<section id="individual-player-performance" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="individual-player-performance"><span class="header-section-number">3.1.1</span> Individual Player Performance</h3>
 <p>In a typical cricket match, the batting performance of an individual player is some time crucial in determining the match result.</p>
 <p>First, we choose a player to analyze. Then filter out this batter’s data from the raw data by using <code>filter(striker == player_name)</code>.</p>
 
@@ -285,8 +285,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -397,7 +395,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

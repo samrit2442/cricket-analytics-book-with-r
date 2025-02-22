@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -195,10 +195,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#data-collection-and-sources" id="toc-data-collection-and-sources" class="nav-link active" data-scroll-target="#data-collection-and-sources"><span class="header-section-number">2</span> Data Collection and Sources</a>
-  <ul class="collapse">
-  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description"><span class="header-section-number">2.1</span> Data Description</a></li>
-  </ul></li>
+  <li><a href="#data-collection-and-sources" id="toc-data-collection-and-sources" class="nav-link active" data-scroll-target="#data-collection-and-sources"><span class="header-section-number">1.1</span> Data Collection and Sources</a></li>
+  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description"><span class="header-section-number">1.2</span> Data Description</a></li>
   </ul>
 </nav>
     </div>
@@ -226,13 +224,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>To know the game of cricket, you need to know the history, when and how it was started.</p>
-<section id="data-collection-and-sources" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Data Collection and Sources</h1>
+<section id="data-collection-and-sources" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="data-collection-and-sources"><span class="header-section-number">1.1</span> Data Collection and Sources</h2>
 <p>There are lot of data sources available online to get started our analysis.</p>
 <p>Here, we will mainly focus on the ball-by-ball data so that we can achieve the insights from more granular level.</p>
 <p>We will be using open source data from <a href="https://cricsheet.org">cricsheet.org</a>.</p>
-<section id="data-description" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="data-description"><span class="header-section-number">2.1</span> Data Description</h2>
+</section>
+<section id="data-description" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="data-description"><span class="header-section-number">1.2</span> Data Description</h2>
 <p>The raw data will be downloaded as a zip file. After unzipping we should have multiple .csv files that corresponds to each T20 International matches. There will be another file with same match ids but a suffix “_info” giving the information of match summary. Our first objective will be to collate all the ball by ball data in a single file or a data frame in R.</p>
 <p>We will download the raw data as a zip file, then unzip and save all the files in a directory.</p>
 <div class="cell">
@@ -250,7 +249,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Next, we will clean up both the datasets separately.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -336,8 +334,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -448,7 +444,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

@@ -4,9 +4,9 @@ subtitle: Batting Analysis
 format: html
 ---
 
-# Batting Analysis
+## Batting Analysis
 
-## Individual Player Performance
+### Individual Player Performance
 
 In a typical cricket match, the batting performance of an individual player is some time crucial in determining the match result.
 

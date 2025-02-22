@@ -186,12 +186,12 @@ mat_report
 mat_report |> 
   gt() |> 
   tab_header(title = md("🏏 **Cricket Match Report** 🏏"), 
-             subtitle = md(paste0(mat_results$batting_team[1], 
+             subtitle = md(paste0("**", mat_results$batting_team[1], 
                                   " vs. ", 
                                   mat_results$batting_team[2],
                                   "<br>", event,
                                   "<br>📅 ", mat_date,
-                                  "<br>🏟 ", venue))) |>
+                                  "<br>🏟 ", venue, "**"))) |>
   tab_row_group(label = mat_results$summary[1], rows = 1:3) |>
   tab_row_group(label = mat_results$summary[2], rows = 4:6) |> 
   row_group_order(groups = mat_results$summary) |>

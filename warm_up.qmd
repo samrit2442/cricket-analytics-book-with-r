@@ -5,7 +5,7 @@ subtitle: Data Collection
 
 To know the game of cricket, you need to know the history, when and how it was started.
 
-# Data Collection and Sources
+## Data Collection and Sources
 
 There are lot of data sources available online to get started our analysis.
 
