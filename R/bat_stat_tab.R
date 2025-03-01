@@ -83,7 +83,7 @@ career_overview <- bat_stat_1 |>
                names_to = "Stat", values_to = "Value")
 
 # Career Overview gt Table
-career_overview |> 
+co <- career_overview |> 
   gt() |> 
   tab_options(column_labels.hidden = TRUE) |>
   tab_header(title = md(paste0("**Batting Statistics🏏 in T20I <br>", plyr_name, "**")),
@@ -97,4 +97,17 @@ career_overview |>
     footnote = "Afghanistan matches are excluded.",
     locations = cells_title(groups = "title")  # Adds footnote to the title
   )
+co
+
+gtsave(
+  co, 
+  filename = "batting_stat.png",
+  path = "./plot/",
+  vwidth = 480,  # Width in pixels
+  vheight = 750  # Height in pixels
+)
+
+
+
+
 

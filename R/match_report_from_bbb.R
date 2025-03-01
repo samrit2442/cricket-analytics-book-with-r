@@ -183,7 +183,7 @@ mat_report <- tibble(
 
 mat_report
 
-mat_report |> 
+mr <- mat_report |> 
   gt() |> 
   tab_header(title = md("🏏 **Cricket Match Report** 🏏"), 
              subtitle = md(paste0("**", mat_results$batting_team[1], 
@@ -241,9 +241,15 @@ mat_report |>
       "</div>"
     ))
   )
+mr
 
-
-
+gtsave(
+  mr, 
+  filename = "match_report.png",
+  path = "./plot/",
+  vwidth = 950,  # Width in pixels
+  vheight = 400  # Height in pixels
+)
 
 
 
