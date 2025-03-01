@@ -20,7 +20,7 @@ This ebook is designed for cricket enthusiasts, analysts, and data scientists wh
 │── 📄 README.md          # Project Overview  
 │── 📂 data/              # Sample datasets  
 │── 📂 R/                 # R scripts for analysis  
-│── 📂 plots/             # Plots and dashboards  
+│── 📂 plot/             # Plots and dashboards  
 ```
 ## 🚀 Getting Started
 ### Prerequisites
@@ -29,5 +29,14 @@ This ebook is designed for cricket enthusiasts, analysts, and data scientists wh
 
 ## 🏆 Contributions
 Contributions are welcome! If you’d like to contribute, please open an issue or submit a pull request.
+
+## 📊 Sample Visualizations
+
+Here are some example plots generated using the scripts in this repo:
+#### 1️⃣ Career Overview of a Player
+![batting_stat](https://github.com/user-attachments/assets/16aaeb92-f42e-4762-9006-f8eb0ea58b5f)
+
+#### 2️⃣ Match Summary Report
+![match_report](https://github.com/user-attachments/assets/46af2d6c-7851-42d5-abd3-83609f31decd)
 
 
