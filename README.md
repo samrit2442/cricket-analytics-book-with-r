@@ -33,10 +33,12 @@ Contributions are welcome! If you’d like to contribute, please open an issue o
 ## 📊 Sample Visualizations
 
 Here are some example plots generated using the scripts in this repo:
-#### 1️⃣ Career Overview of a Player
+### 1️⃣ Career Overview of a Player
 ![batting_stat](https://github.com/user-attachments/assets/16aaeb92-f42e-4762-9006-f8eb0ea58b5f)
 
-#### 2️⃣ Match Summary Report
+### 2️⃣ Match Summary Report
 ![match_report](https://github.com/user-attachments/assets/46af2d6c-7851-42d5-abd3-83609f31decd)
 
+### 3️⃣ IPL Teams Boundaries Percentage
+![ipl_boundary](https://github.com/user-attachments/assets/c8966296-918c-4657-9aad-2e1e2f20a513)
 
