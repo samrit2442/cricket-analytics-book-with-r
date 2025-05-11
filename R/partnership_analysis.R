@@ -21,14 +21,28 @@ partnership_df <- t20_2 |>
   
 
 
-dplyr::group_by(match_id, non_striker, striker) |> 
-  dplyr::summarise(runs = sum(runs), balls = sum(balls), 
-            fours = sum(fours), sixes = sum(sixes), 
-            dot_balls = sum(dot_balls))
-  # dplyr::mutate(partnership = cumsum(runs)) |> 
-  # dplyr::arrange(match_id, .by_group = TRUE)
+# dplyr::group_by(match_id, non_striker, striker) |> 
+#   dplyr::summarise(runs = sum(runs), balls = sum(balls), 
+#             fours = sum(fours), sixes = sum(sixes), 
+#             dot_balls = sum(dot_balls))
+#   # dplyr::mutate(partnership = cumsum(runs)) |> 
+#   # dplyr::arrange(match_id, .by_group = TRUE)
 
 partnership_df |> head(10)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

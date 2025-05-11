@@ -1,0 +1,18 @@
+---
+title: "Performance Analysis"
+format: html
+---
+
+# Run Crafting Insights and Stroke Play
+
+## Batting Performance Analysis
+
+In every format of cricket, there are couple of metrics available to measure batting performance of a cricketer. Among them, the most used and popular is Batting Average and Strike Rate.
+
+Batting Average is defined by the ratio of the total runs scored by a batter to the total number of dismissed innings (i.e. the number of innings in which he/she got dismissed by the opponent teams).
+
+Mathematically, we can write the Batting Average (Traditional Batting Average) as
+
+$$
+\text{TBA} = \dfrac{\text{Total Runs Scored}}{\text{Total Number of Dismissed Innings}}
+$$
