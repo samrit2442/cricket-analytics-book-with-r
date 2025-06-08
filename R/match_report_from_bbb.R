@@ -46,7 +46,7 @@ bat_dtls_2 <- match_data |>
   dplyr::mutate(out = 1) |>
   full_join(bat_dtls_1, by = c("player_dismissed" = "striker")) |> 
   full_join(all_players, by = c("player_dismissed" = "player", "batting_team", "innings")) |> 
-  dplyr::filter(player_dismissed != "0") |> 
+  dplyr::filter(player_dismissed != "0", !is.na(innings)) |> 
   dplyr::mutate(across(where(is.numeric), ~replace_na(., 0))) |> 
   dplyr::mutate(innings = ifelse(innings == 0, 
                                  max(innings[batting_team == batting_team]), 
@@ -164,8 +164,6 @@ mat_sum <- function() {
 }
 mat_sum()
 
-# Need to change the Coin emoji by adding if condition
-
 mat_bat <- c(rep(mat_results$summary[1], 3), rep(mat_results$summary[2], 3))
 
 
@@ -245,7 +243,7 @@ mr
 
 gtsave(
   mr, 
-  filename = "match_report.png",
+  filename = "match_report_02.png",
   path = "./plot/",
   vwidth = 950,  # Width in pixels
   vheight = 400  # Height in pixels
