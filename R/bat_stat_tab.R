@@ -3,7 +3,7 @@ pacman::p_load(tidyverse, gt, tictoc)
 
 # Getting the raw data
 tic()
-source("./R/data_cleaning.R") # Approx. 6 seconds
+source("./R/01_data_cleaning.R") # Approx. 6 seconds
 toc()
 
 plyr_name <- t20_2$striker |> 
@@ -99,13 +99,13 @@ co <- career_overview |>
   )
 co
 
-gtsave(
-  co, 
-  filename = "batting_stat.png",
-  path = "./plot/",
-  vwidth = 480,  # Width in pixels
-  vheight = 750  # Height in pixels
-)
+# gtsave(
+#   co, 
+#   filename = "batting_stat.png",
+#   path = "./plot/",
+#   vwidth = 480,  # Width in pixels
+#   vheight = 750  # Height in pixels
+# )
 
 
 
